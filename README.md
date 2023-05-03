@@ -1,24 +1,21 @@
-# README
+# Basic-auth
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##### Netflix Replica:
+Requiments:
 
-Things you may want to cover:
+###### Model:
+* user(email, full_name, role, password_digest)
+* movie(title, description, type, release_date, rating, user_id)
+* payment(amount, status, user_id)
+* notification(detail, status, user_id)
 
-* Ruby version
+```
+rails g model user email full_name role password_digest
+rails g model movie title description type release_date:date rating user:references
+rails g model payment amount:float status user:references
+rails g model notification detail status user:references
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+rails g model user email full_name role password_digest --force && rails g model movie title description type release_date:date rating user:references --force && rails g model payment amount:float status user:references --force && rails g model notification detail status user:references --force && rails db:drop db:create db:migrate && git add . && git commit -m "Added Models" && git push origin master
+```
