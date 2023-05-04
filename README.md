@@ -19,3 +19,11 @@ rails g model notification detail status user:references
 ```
 rails g model user email full_name role password_digest --force && rails g model movie title description type release_date:date rating user:references --force && rails g model payment amount:float status user:references --force && rails g model notification detail status user:references --force && rails db:drop db:create db:migrate && git add . && git commit -m "Added Models" && git push origin api-branch
 ```
+
+User:
+* has_many :payments
+* has_many :notifications
+* movies
+
+notification, payment, movie:
+* belongs_to :user
