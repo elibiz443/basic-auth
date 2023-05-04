@@ -32,3 +32,7 @@ Controllers:
 ```
 rails g controller api/v1/users index && rails g controller api/v1/movies index && rails g controller api/v1/notifications index && rails g controller api/v1/payments index
 ```
+
+```
+rails db:drop db:create db:migrate && rails s -p 3001
+```

@@ -6,6 +6,5 @@ class User < ApplicationRecord
   has_many :movies
 
   validates :full_name, presence: true
-  validates :role, presence: true
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: {with: URI::MailTo::EMAIL_REGEXP}
 end
