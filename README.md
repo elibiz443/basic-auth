@@ -27,3 +27,8 @@ User:
 
 notification, payment, movie:
 * belongs_to :user
+
+Controllers:
+```
+rails g controller api/v1/users index && rails g controller api/v1/movies index && rails g controller api/v1/notifications index && rails g controller api/v1/payments index
+```
