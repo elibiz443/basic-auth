@@ -1,4 +1,11 @@
 class Api::V1::MoviesController < ApplicationController
+  before_action :set_movie, only: [:show, :update, :destroy]
+
+  def index
+    @movies = Movie.all
+    render json: { movie: @movies }, status: :ok
+  end
+
   def create
     @movie = Movie.new(movie_params)
 
@@ -10,6 +17,11 @@ class Api::V1::MoviesController < ApplicationController
   end
 
   private
+
+  def set_movie
+    @movie = Movie.find(params[:id])
+  end
+
 
   def movie_params
     params.require(:movie).permit(:title, :description, :movie_type, :movie_link, :release_date, :rating, :user_id)
