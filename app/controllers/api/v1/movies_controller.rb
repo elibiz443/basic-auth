@@ -6,6 +6,10 @@ class Api::V1::MoviesController < ApplicationController
     render json: { movie: @movies }, status: :ok
   end
 
+  def show
+    render json: { movie: @movie }, status: :ok
+  end
+
   def create
     @movie = Movie.new(movie_params)
 
@@ -14,6 +18,19 @@ class Api::V1::MoviesController < ApplicationController
     else
       render json: { errors: @movie.errors.full_messages }, status: :unprocessable_entity
     end
+  end
+
+  def update
+    if @movie.update(movie_params)
+      render json: { message: "Movie updated successfully 👍", Movie: @movie }, status: :ok
+    else
+      render json: { errors: @movie.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @movie.destroy
+    render json: { message: "Movie destroyed ❌" }, status: :ok
   end
 
   private
