@@ -88,3 +88,11 @@ https://support.google.com/accounts/answer/185839
 ```
 https://support.google.com/accounts/answer/185833
 ```
+
+Validations:
+```
+movie_link
+title
+movie_type
+release_date
+```
