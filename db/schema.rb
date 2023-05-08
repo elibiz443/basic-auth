@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_03_173816) do
     t.string "title"
     t.string "description"
     t.string "movie_type"
+    t.string "movie_link"
     t.date "release_date"
     t.string "rating"
     t.bigint "user_id", null: false
