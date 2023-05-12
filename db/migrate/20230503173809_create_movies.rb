@@ -7,6 +7,7 @@ class CreateMovies < ActiveRecord::Migration[7.0]
       t.string :movie_link
       t.date :release_date
       t.string :rating
+      t.string :movie_icon
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
