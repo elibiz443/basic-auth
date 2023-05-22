@@ -88,3 +88,8 @@ https://support.google.com/accounts/answer/185839
 ```
 https://support.google.com/accounts/answer/185833
 ```
+##### Movie deliverables: 
+* pagination 
+* movie icons 
+* movie link
+* search functionality
