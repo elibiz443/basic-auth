@@ -23,3 +23,5 @@ group :development do
 end
 
 gem 'faker'
+gem 'pagy', '~> 6.0'
+gem 'simple_form'
